@@ -42,8 +42,8 @@ model Credentials {
 
 model Annotations {
   id        Int      @id @default(autoincrement())
-  text      String
-  label     String
+  text      String   @db.VarChar(1000)
+  label     String   @db.VarChar(50)
   user      Users    @relation(fields: [userId], references: [id])
   userId    Int
   createdAt DateTime @default(now())
@@ -55,8 +55,8 @@ model Cards {
   id             Int      @id @default(autoincrement())
   number         String
   cardholderName String
-  securityCode   String
-  expirationDate String
+  cvv            String
+  expiration     String
   password       String
   isVirtual      Boolean
   type           CardType

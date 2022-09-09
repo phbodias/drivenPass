@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 
 export async function signUpController(req:Request, res: Response) {
+    const {email, password } = req.body
     return res.sendStatus(201);
 }
 
