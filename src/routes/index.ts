@@ -1,8 +1,8 @@
 import { Router } from "express";
-import { initialController } from "../controllers/initialController";
+import authRoute from "./authRoute";
 
 const router = Router();
 
-router.get('/initial', initialController);
+router.use(authRoute);
 
 export default router;
