@@ -1,7 +1,6 @@
-import Joi from "joi";
-import JoiDateFactory from '@joi/date';
-
-const joi = Joi.extend(JoiDateFactory)
+import DateExtension from '@joi/date';
+import * as JoiImport from 'joi';
+const Joi = JoiImport.extend(DateExtension);
 
 const cardSchema = Joi.object({
   number: Joi.number().required(),

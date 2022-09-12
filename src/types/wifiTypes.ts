@@ -7,5 +7,4 @@ export interface IWifiData {
   createdAt: Date;
 }
 
-
-export type TCreateWifiData = Omit<IWifiData,'id' | 'createdAt'>
+export type TCreateWifiData = Omit<IWifiData, "id" | "userId" | "createdAt">;
