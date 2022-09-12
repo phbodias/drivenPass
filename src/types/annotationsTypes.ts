@@ -6,4 +6,4 @@ export interface IAnnotationData {
   createdAt: Date;
 }
 
-export type TCreateAnnotationData = Omit<IAnnotationData, "id" | "createdAt">;
+export type TAnnotationData = Omit<IAnnotationData, "id" | "userId" |"createdAt">;

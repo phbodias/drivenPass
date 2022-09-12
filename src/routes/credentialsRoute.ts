@@ -14,6 +14,6 @@ credentialRoute.post(
 );
 credentialRoute.get("/credentials", validateJWT, getUserCredentials);
 credentialRoute.get("/credential/:id", validateJWT, getCredentialBYId);
-credentialRoute.delete("/deletecredential/:id", validateJWT, deleteCredential);
+credentialRoute.delete("/credential/:id", validateJWT, deleteCredential);
 
 export default credentialRoute;
