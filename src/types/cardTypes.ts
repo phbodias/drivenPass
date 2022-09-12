@@ -14,4 +14,4 @@ export interface ICardData {
   createdAt: Date;
 }
 
-export type TCreateCardData = Omit<ICardData, "id" | "createdAt">;
+export type TCreateCardData = Omit<ICardData, "id" | "userId" | "createdAt">;
