@@ -8,4 +8,4 @@ export interface ICredentialData {
   createdAt: Date;
 }
 
-export type TCreateCredentialData = Omit<ICredentialData,'id' | 'createdAt'>
+export type TCredentialData = Omit<ICredentialData,'id' | 'userID' | 'createdAt'>

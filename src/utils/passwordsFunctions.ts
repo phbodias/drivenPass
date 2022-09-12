@@ -1,4 +1,5 @@
 import bcrypt from "bcrypt";
+import Cryptr from "cryptr";
 import dotenv from "dotenv";
 
 dotenv.config();
@@ -18,4 +19,16 @@ export async function comparePasswords(
   const passwordsMatch = await bcrypt.compare(password, crypPassword);
   if (!passwordsMatch) return false;
   return true;
+}
+
+export function encryptString(password: string): string {
+  const cryptrKey: string = process.env.CRYPTR_PASSWORD ?? "";
+  const cryptr = new Cryptr(cryptrKey);
+  return cryptr.encrypt(password);
+}
+
+export function decrypt(password: string): string {
+  const cryptrKey: string = process.env.CRYPTR_PASSWORD ?? "";
+  const cryptr = new Cryptr(cryptrKey);
+  return cryptr.decrypt(password);
 }
