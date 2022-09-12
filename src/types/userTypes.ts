@@ -5,4 +5,4 @@ export interface IUserData {
     createdAt:Date;
 }
 
-export type TCreateUserData = Omit<IUserData, "id, createdAt">;
+export type TUserData = Omit<IUserData, "id, createdAt">;

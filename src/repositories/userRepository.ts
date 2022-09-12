@@ -1,7 +1,7 @@
 import prisma from "../database/database";
-import { IUserData, TCreateUserData } from "../types/userTypes";
+import { IUserData, TUserData } from "../types/userTypes";
 
-export async function insert(userData: TCreateUserData) {
+export async function insert(userData: TUserData) {
   await prisma.users.create({
     data: {
       email: userData.email,
@@ -19,3 +19,4 @@ export async function findById(id: number): Promise<IUserData> {
   const user = await prisma.users.findUnique({ where: { id } });
   return user as IUserData;
 }
+
